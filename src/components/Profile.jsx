@@ -2,17 +2,12 @@ import React, { useContext } from 'react';
 import UserContext from '../context/userContext';
 
 function Profile() {
-
-  // Destructuring the value from UserContext, using the same variable name 'user' as given in the prop 
   const { user } = useContext(UserContext);
-
-  // Destructuring 'name' as user from the context value 
-  const { name= user } = useContext(UserContext);
+  if(!user) return (<div className="bg-blue-200 m-4 p-4 text-center text-gray-900 text-lg font-medium ">Please Enter The Name </div>)
 
   return (
     <>
-    <div className="bg-red-100 text-black m-4  p-4 ">Profile Name : {user}</div>
-    <div className="bg-red-100 text-black m-4  p-4 ">Profile Name : {name}</div>
+    <div className="bg-blue-200 m-4 p-4 text-center text-gray-900 text-lg font-medium">Welcome {user.name} </div>
     </>
   );
 }

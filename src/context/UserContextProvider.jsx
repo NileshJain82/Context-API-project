@@ -3,7 +3,7 @@ import UserContext from './userContext'
 
 
 function UserContextProvider({children}) {
-    const [user,setUser] = useState("nilesh")
+    const [user,setUser] = useState("")
   return (
     <UserContext.Provider value={{user,setUser}}>
      {children}
